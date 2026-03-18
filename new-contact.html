@@ -26,25 +26,16 @@
  <div class="container">
         <h1 style="text-align: center; margin-bottom: 20px;">Add New Employee</h1>
 
-        <form>
-<label>Full Name</label><br>
-<input type="text" name="fullname"><br><br>
+        <form id="employeeForm">
+    <input type="text" id="name" placeholder="Full Name" required> <br>
+   <br> <input type="email" id="email" placeholder="Email" required><br>
+   <br> <input type="text" id="phone" placeholder="Phone Number" required><br>
+   <br> <input type="text" id="department" placeholder="Department" required><br>
+    
 
-<label>Email <Address></Address></label><br>
-<input type="email" name="email"><br><br>
-
-<label>Phone Number</label><br>
-<input type="text" name="phone"><br><br>
-
-<label>Department</label><br>
-<input type="text" name="department"><br><br>
-
-<label>Position</label><br>
-<input type="text" name="position"><br><br>
-
-<button type="submit">Submit</button>
-
-        </form>
+    <br><button type="submit">Save Employee</button>
+</form>
     </div>
 </body>
+<script src="main.js"></script>
 </html>
