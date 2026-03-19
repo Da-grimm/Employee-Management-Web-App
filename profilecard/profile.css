@@ -1,0 +1,30 @@
+.profile-pic {
+    width: 150px;            
+    height: 150px;
+    
+    margin: 0 auto 15px; 
+    border: 3px solid white; 
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    display: block;
+    object-fit: cover;
+}
+
+#area {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgb(0,0,0,0.45);
+    padding: 15px;
+    background-color: rgb(4,41,59);
+    color: white;
+    border-radius: 10px;
+}
+#social{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
