@@ -1,7 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial,sans-serif;
     margin: 20px;
     background-color: #f4f4f4;
+    background-image: url('Images/laptop-coffee-cup-notepad-black-background-top-view.jpg');
+    background-size: cover;
+    
+    
 }
 
 
@@ -191,6 +199,7 @@ th:last-child {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border-left: 5px solid #007bff; 
     margin-right: 5%;
+    width: 80%;
     display: block;
 }
 
