@@ -9,6 +9,7 @@
     background-size: cover;
     display: block;
     object-fit: cover;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 4);
 }
 
 #area {
