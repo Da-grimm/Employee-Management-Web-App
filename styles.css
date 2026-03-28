@@ -1,255 +1,251 @@
-*{
-    box-sizing: border-box;
-}
-
+/* ================= BASE ================= */
 body {
-    font-family: Arial,sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-    background-image: url('Images/laptop-coffee-cup-notepad-black-background-top-view.jpg');
-    background-size: cover;
-    
-    
-}
-
-
-
-
-.sidebar{
-position:fixed;
-left:0;
-top:0;
-width:100%;
-min-width: auto;
-height:100vh;
-background:#333;
-padding-top:60px;
-transition:0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    z-index: 1000;
-}
-
-
-.profile {
-    margin-top: 50px;       
-    margin-bottom: 30px;    
-    text-align: center;     
-}
-
-
-.profile-pic {
-    width: 150px;            
-    height: 150px;
-    
-    margin: 0 auto 15px auto; 
-    border: 3px solid white; 
-    border-radius: 50%;
-    overflow: hidden;
-    background-size: cover;
-}
-
-
-.profile h3 {
     margin: 0;
-    color: #fff;
-    font-size: 1.1em;
-}
+    padding: 0;
+    font-family: Arial, sans-serif;
 
-
-.profile p {
-    margin: 5px 0 0 0;
-    color: #aaa;
-    font-size: 0.9em;
-}
-
-
-.nav-links {
-    width: 100%;
-    
-}
-
-
-
-.sidebar a{
-display:block;
-color:white;
-padding:15px;
-text-decoration:none;
-}
-.sidebar a:hover {
-    color: burlywood;
-    transition: color 0.3s;
-}
-
-
-
-h1{
+    background: url('Images/laptop-coffee-cup-notepad-black-background-top-view.jpg') no-repeat center center/cover;
+    min-height: 100vh;
     color: #333;
+    position: relative;
 }
 
-form{
-    background-color: white;
-    padding: 30px;
-    width: 300px;
-    border-radius: 5px;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius:15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eee;
+/* Overlay for better readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: -1;
 }
 
-input{
-    width: 100%;
-    padding: 8px;
-}
-
-table{
-    width: 95%;
-    border-radius: 8px;
-    border-collapse: collapse;
-    background-color: white;
-    box-sizing: border-box;
-    margin-right: 50px;
-    display: table;
-
-}
-
-th,td {
-    padding: 10px;
-    text-align: left;
-}
-
-th{
-    background-color: #333;
-    color: white;
-}
-
-button{
-    padding: 5px 10px;
-    margin-right: 5px;
-    border: none;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: #555;
-}
-
-.container{
-    margin-left: 0;
-    width: 100%;
-   padding: 1rem;
-   box-sizing: border-box;
-   flex: 1;
-   min-height: 100vh;
-}
-
-.actions button {
-    margin: 4px 2px;
-    padding: 6px 10px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-}
-.details { background: #007bff; }
-.edit   { background: #fd7e14; }
-.delete { background: #dc3545; }
-
-thead th {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-th:last-child {
-    background-color: #222;   
-}
-
-.profile-btn {
-    display: block;
-    width: fit-content;
-    margin: 25px auto;
-    padding: 12px 32px;
-    background-color: #4a90e2;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.05rem;
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 3px 8px rgba(74, 144, 226, 0.2);
-}
-
-.profile-btn:hover {
-    background-color: #357abd;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(74, 144, 226, 0.3);
-}
-
-#welcome-card {
-    background: #fff;
-    padding: 30px;
-    padding-right: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #007bff; 
-    margin-right: 5%;
-    width: 80%;
-    display: block;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
+/* Layout */
 .MR {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    width: 100%;
     min-height: 100vh;
 }
 
-@media (min-width: 768px) {
-    .MR {
-        flex-direction: row;
-        padding: 1.5rem 2rem;
-    }
-    .sidebar{
-        width: 250px;
-        flex-shrink: 0;
-    }
-    .container{
-        margin-left: 250px;
-        width:  calc(100%-250px);
-        padding: 1.5rem 2rem;
-    }
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 260px;
+    background: #1e293b;
+    color: white;
+    padding-top: 40px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-input[type="text"],
-input[type="email"] {
+/* Profile */
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #3b82f6;
+    margin-bottom: 10px;
+}
+
+/* Sidebar links */
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    width: 80%;
+    text-align: center;
+    margin: 6px 0;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(6px);
+}
+
+/* Buttons */
+.profile-btn, .profile button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 25px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* ================= MAIN CONTENT ================= */
+.container {
+    margin-left: 260px;
+    padding: 40px;
+    flex: 1;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(3px);
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.95); /* A clear white-ish background */
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* A soft shadow makes it pop */
+    box-sizing: border-box;
+
+    /* ——— THE NEW "CARD" STYLING ——— */
+    margin: 30px;            /* Pushes it 30px from *every* edge (top, right, bottom, and sidebar) */
+    max-width: 700px;        /* This limits the width so it doesn't stretch across the screen */
+    
+   
+}
+/* ================= FORM ================= */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    max-width: 450px;
+    margin: 30px auto;
+}
+
+/* Inputs */
+input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0 15px 0;
-    font-size: 16px;
-    box-sizing: border-box;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
 }
 
+/* ================= TABLE ================= */
 table {
     width: 100%;
-    min-width: 650px;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    background: #1e293b;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+tr:hover {
+    background: #eef2ff;
+}
+
+/* ================= BUTTONS ================= */
+.actions button, .details, .edit, .delete {
+    margin: 4px 3px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.details { background: #3b82f6; }
+.edit   { background: #f59e0b; }
+.delete { background: #ef4444; }
+#save-employee {background: #1a2a3a}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 768px) {
+
+    /* Sidebar → top bar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .profile img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .profile h3,
+    .profile p {
+        display: none;
+    }
+
+    /* Links horizontal */
+    .sidebar a {
+        width: auto;
+        padding: 8px 10px;
+        font-size: 14px;
+        margin: 0 4px;
+    }
+
+    /* Content full width */
+    .container {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    /* Table scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Forms */
+    form {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    /* Buttons smaller */
+    .actions button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
 }
