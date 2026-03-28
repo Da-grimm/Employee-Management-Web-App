@@ -144,6 +144,7 @@ button:hover{
     padding-left: 20px;
     padding-right: 20px;
     width: calc(100% - 200px);
+   
 }
 
 .actions button {
@@ -207,4 +208,15 @@ h1 {
     font-size: 2rem;
     margin-bottom: 10px;
     color: #2c3e50;
+}
+.MR {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        flex-direction: column;
+    }
 }
