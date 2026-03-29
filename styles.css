@@ -249,3 +249,53 @@ button:hover {
         font-size: 12px;
     }
 }
+
+/* Container */
+.stats-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Glass squircle cards */
+.stat-card {
+  width: 220px;
+  height: 140px;
+  padding: 20px;
+
+  border-radius: 30px; /* squircle feel */
+  
+  background: rgba(255, 255, 255, 0.08); /* transparent glass */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.3),
+    inset 0 0 10px rgba(255,255,255,0.05);
+
+  color: dark grey;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.5),
+    inset 0 0 12px rgba(255,255,255,0.08);
+}
+
+/* Text */
+.stat-card h3 {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.stat-card p {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+}

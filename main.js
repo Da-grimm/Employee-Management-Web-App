@@ -106,3 +106,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial render (only on view page)
     renderTable();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const employeeCountEl = document.getElementById("employeeCount");
+    const departmentCountEl = document.getElementById("departmentCount");
+
+    if (!employeeCountEl || !departmentCountEl) return; // safe if not on home page
+
+    let employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+    // Count employees
+    let employeeCount = employees.length;
+
+    // Count unique departments
+    let departments = new Set();
+    employees.forEach(emp => {
+        if (emp.department) {
+            departments.add(emp.department.trim());
+        }
+    });
+
+    // Update UI
+    employeeCountEl.textContent = employeeCount;
+    departmentCountEl.textContent = departments.size;
+});
